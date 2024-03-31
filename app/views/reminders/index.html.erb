@@ -1,1 +1,12 @@
-<h1>Reminders</h1>
+<h1 class="text-3xl font-bold underline">Reminders</h1>
+
+<div class="flex">
+  <ul>
+    <% @reminders.each do |reminder| %>
+      <li><%= reminder.url %></li>
+      <li><%= reminder.page_number %></li>
+      <li><%= reminder.created_at %></li>
+      <li><%= reminder.updated_at %></li>
+    <% end %>
+  </ul>
+</div>
