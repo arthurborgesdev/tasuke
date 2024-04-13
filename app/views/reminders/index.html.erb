@@ -1,12 +1,22 @@
 <h1 class="text-3xl font-bold underline">Reminders</h1>
 
-<div class="flex">
-  <ul>
+<table class="min-w-full table-fixed border-separate border-spacing-0.5 border border-slate-400">
+  <thead>
+    <tr>
+      <th class="border border-slate-300 w-3/8">URL</th>
+      <th class="border border-slate-300 w-2/8">Page Number</th>
+      <th class="border border-slate-300 w-3/8">Created At</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @reminders.each do |reminder| %>
-      <li><%= reminder.url %></li>
-      <li><%= reminder.page_number %></li>
-      <li><%= reminder.created_at %></li>
-      <li><%= reminder.updated_at %></li>
+      <tr>
+        <td class="border border-slate-300 w-3/8"><%= reminder.url %></td>
+        <td class="border border-slate-300 w-2/8"><%= reminder.page_number %></td>
+        <td class="border border-slate-300 w-3/8"><%= reminder.created_at %></td>
+      </tr>
     <% end %>
-  </ul>
-</div>
+  </tbody>
+  <%= link_to "New reminder", new_reminder_path %>
+</table>
+

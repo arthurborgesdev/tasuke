@@ -68,3 +68,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Live reload
+group :development do
+  gem "rails_live_reload"
+end
