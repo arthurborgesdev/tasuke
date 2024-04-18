@@ -1,0 +1,8 @@
+<h1>Reminder</h1>
+
+<span>URL: </span><%= @reminder.url %><br>
+<span>Page number: </span><%= @reminder.page_number %>
+
+<ul>
+  <li><%= link_to "Edit", edit_reminder_path(@reminder) %></li>
+</ul>

@@ -6,6 +6,7 @@
       <th class="border border-slate-300 w-3/8">URL</th>
       <th class="border border-slate-300 w-2/8">Page Number</th>
       <th class="border border-slate-300 w-3/8">Created At</th>
+      <th class="border border-slate-300 w-3/8">Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,7 @@
         <td class="border border-slate-300 w-3/8"><%= reminder.url %></td>
         <td class="border border-slate-300 w-2/8"><%= reminder.page_number %></td>
         <td class="border border-slate-300 w-3/8"><%= reminder.created_at %></td>
+        <td class="border border-slate-300 w-3/8"><a href="/reminders/<%= reminder.id %>">Edit</a></td>
       </tr>
     <% end %>
   </tbody>
