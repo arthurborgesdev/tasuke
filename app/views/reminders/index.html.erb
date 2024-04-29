@@ -1,0 +1,37 @@
+<h1 class="text-3xl font-bold underline">Reminders</h1>
+
+<table class="min-w-full table-fixed border-separate border-spacing-0.5 border border-slate-400">
+  <thead>
+    <tr>
+      <th class="border border-slate-300 w-3/8">URL</th>
+      <th class="border border-slate-300 w-2/8">Page Number</th>
+      <th class="border border-slate-300 w-3/8">Created At</th>
+      <th class="border border-slate-300 w-3/8">Edit</th>
+      <th class="border border-slate-300 w-3/8">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reminders.each do |reminder| %>
+      <tr>
+        <td class="border border-slate-300 w-3/8 text-blue-700">
+          <a href="<%= format_url(reminder.url) %>" target="_blank">
+            <%= format_url(reminder.url) %>
+          </a>
+        </td>
+        <td class="border border-slate-300 w-2/8"><%= reminder.page_number %></td>
+        <td class="border border-slate-300 w-3/8"><%= reminder.created_at %></td>
+        <td class="border border-slate-300 w-3/8">
+          <%= link_to "Edit", edit_reminder_path(reminder) %>
+        </td>
+        <td class="border border-slate-300 w-3/8">
+          <%= link_to "Destroy", reminder_path(reminder), data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+          } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  <%= link_to "New reminder", new_reminder_path %>
+</table>
+

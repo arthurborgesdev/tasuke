@@ -1,0 +1,21 @@
+<%= form_with model: reminder do |form| %>
+  <div>
+    <div class="my-4">
+      <%= form.label :url, "URL" %>
+      <%= form.text_field :url %>
+    </div>
+    <div class="my-2">
+      <%= form.label :page_number, "Page Number" %>
+      <%= form.text_field :page_number %>
+    </div>
+    <% reminder.errors.full_messages_for(:url).each do |message| %>
+      <div class="text-red-500"><%= message %></div>
+    <% end %>
+    <div>
+      <%= form.submit reminder_form_button(reminder), class: "text-green-500" %>
+    <div>
+    <div>
+      <%= link_to "Home", reminders_path %>
+    </div>
+  </div>
+<% end %>
