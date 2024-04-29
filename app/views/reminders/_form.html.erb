@@ -9,8 +9,13 @@
       <%= form.text_field :page_number %>
     </div>
     <% reminder.errors.full_messages_for(:url).each do |message| %>
-      <div><%= message %></div>
+      <div class="text-red-500"><%= message %></div>
     <% end %>
-    <button class="text-green-600"><%= form.submit "Create Reminder" %></button>
+    <div>
+      <%= form.submit reminder_form_button(reminder), class: "text-green-500" %>
+    <div>
+    <div>
+      <%= link_to "Home", reminders_path %>
+    </div>
   </div>
 <% end %>
